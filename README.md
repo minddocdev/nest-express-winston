@@ -23,6 +23,12 @@ yarn test
 yarn add @minddocdev/nest-express-winston
 ```
 
+Add a `.yarnrc` file to the root of your project with the following content:
+
+```text
+"@minddocdev:registry" "https://npm.pkg.github.com"
+```
+
 ## Publishing
 
 To publish a new version of the package, firstly bump the version in the `package.json` file,
