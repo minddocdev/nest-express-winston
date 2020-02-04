@@ -29,6 +29,12 @@ Add a `.yarnrc` file to the root of your project with the following content:
 "@minddocdev:registry" "https://npm.pkg.github.com"
 ```
 
+If the above does not work ensure you are logged in to github:
+
+```
+npm login --registry=https://npm.pkg.github.com
+```
+
 ## Publishing
 
 To publish a new version of the package, firstly bump the version in the `package.json` file,
