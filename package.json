@@ -1,0 +1,64 @@
+{
+  "name": "@minddocdev/nest-express-winston",
+  "version": "0.0.1",
+  "description": "Implementation of a nestjs logger using winston and express-winston",
+  "author": "MindDoc Health GmbH",
+  "license": "MIT",
+  "main": "lib/src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib/src/index.js",
+    "lib"
+  ],
+  "types": "lib/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minddocdev/nest-express-winston.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "keywords": [
+    "nestjs",
+    "node",
+    "express",
+    "winston"
+  ],
+  "scripts": {
+    "build": "tsc -b -v",
+    "test": "yarn build && jest --coverage --verbose --no-cache",
+    "lint": "tslint --project .",
+    "ncu:u": "ncu -u"
+  },
+  "dependencies": {
+    "@nestjs/common": "~6.11.5",
+    "envalid": "~6.0.0",
+    "express-http-context": "~1.2.3",
+    "express-winston": "~4.0.2",
+    "uuid": "~3.3.3",
+    "winston": "~3.2.1"
+  },
+  "devDependencies": {
+    "@types/common-tags": "~1.8.0",
+    "@types/jest": "~24.9.0",
+    "@types/node": "~13.1.8",
+    "@types/uuid": "~3.4.6",
+    "common-tags": "~1.8.0",
+    "husky": "~4.0.10",
+    "jest": "~24.9.0",
+    "npm-check-updates": "~4.0.1",
+    "prettier": "~1.19.1",
+    "ts-jest": "~24.3.0",
+    "tslint": "~5.20.1",
+    "tslint-config-airbnb": "~5.11.2",
+    "typescript": "~3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn build"
+    }
+  }
+}
