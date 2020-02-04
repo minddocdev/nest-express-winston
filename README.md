@@ -23,15 +23,16 @@ yarn test
 yarn add @minddocdev/nest-express-winston
 ```
 
-Add a `.yarnrc` file to the root of your project with the following content:
+If it does not exist, add a `.yarnrc` file to the root of your project with the following content:
 
 ```text
 "@minddocdev:registry" "https://npm.pkg.github.com"
 ```
 
-If the above does not work ensure you are logged in to github:
+Ensure you are logged in to github using a personal access token with
+`delete:packages, read:packages, repo, write:packages` privileges as the password:
 
-```
+```bash
 npm login --registry=https://npm.pkg.github.com
 ```
 
