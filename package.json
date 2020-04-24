@@ -34,7 +34,7 @@
     "ncu:u": "ncu -u"
   },
   "dependencies": {
-    "@nestjs/common": "~7.0.8",
+    "@nestjs/common": "~7.0.9",
     "envalid": "~6.0.1",
     "express-http-context": "~1.2.3",
     "express-winston": "~4.0.3",
