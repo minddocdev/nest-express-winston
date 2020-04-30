@@ -37,3 +37,15 @@ jobs:
         run: yarn test
       - name: Build code
         run: yarn build
+  release:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Create Release
+        uses: minddocdev/mou-release-action@master
+        with:
+          draft: false
+          prerelease: false
+          templatePath: RELEASE_DRAFT/default.md
+          token: ${{ github.token }}
