@@ -1,9 +1,7 @@
-# :sparkler: $APP
+# :sparkler: nest-express-winston
 
 ## $VERSION Changelog
 
 $CHANGES
-
-$TASKS
 
 $PULL_REQUESTS
