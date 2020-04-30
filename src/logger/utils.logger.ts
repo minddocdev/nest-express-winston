@@ -32,7 +32,7 @@ const stderrLevels = ['error'];
  */
 /* istanbul ignore next */
 // tslint:disable-next-line: ter-arrow-parens
-const injectMeta = format(info => {
+const injectMeta = format((info) => {
   info.requestId = getRequestIdContext();
   // Add extra metadata from the config
   info.environment = env.ENVIRONMENT;
@@ -54,7 +54,7 @@ function serializeError(error: Error) {
 
 /* istanbul ignore next */
 // tslint:disable-next-line: ter-arrow-parens
-const errorsFormat = format(info => {
+const errorsFormat = format((info) => {
   if (info.level === 'error' && info.error) {
     info.error = serializeError(info.error);
   }
@@ -62,10 +62,10 @@ const errorsFormat = format(info => {
 });
 
 /**
- * Retrieve a custom log formated entry. Useful for print only!
+ * Retrieve a custom log formatted entry. Useful for print only!
  *
  * @param info The information about the log entry.
- * @returns The pretty formated log information.
+ * @returns The pretty formatted log information.
  */
 function formatLog(info: TransformableInfo) {
   // Collect all fields independently, ignore meta and stringify the rest
@@ -146,6 +146,7 @@ export function createExpressWinstonHandler(logger: Logger) {
     expressFormat: false,
     colorize: env.ENVIRONMENT === 'development',
     requestFilter: sanitizeHeaders,
+    headerBlacklist: ['cookie'],
     ignoreRoute: () => false,
   });
 }
