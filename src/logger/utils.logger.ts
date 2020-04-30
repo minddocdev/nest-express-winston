@@ -94,7 +94,7 @@ export function createNestWinstonLogger(label: string) {
     // Development formats
     consoleTransport.format = format.combine(
       format.colorize(),
-      format.printf((info) => formatLog(info)),
+      format.printf(info => formatLog(info)),
     );
     logTransporters.push(consoleTransport);
   } else if (isKubernetesEnv) {
