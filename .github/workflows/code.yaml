@@ -47,5 +47,5 @@ jobs:
         with:
           draft: false
           prerelease: false
-          templatePath: RELEASE_DRAFT/default.md
+          templatePath: .github/RELEASE_DRAFT/default.md
           token: ${{ github.token }}
