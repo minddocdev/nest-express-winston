@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import * as httpContext from 'express-http-context';
-import * as uuidv1 from 'uuid/v1';
+import { v4 as uuidv4 } from 'uuid';
 
 /**
  * The http context middleware to be called right before the next handler that needs to
@@ -16,7 +16,7 @@ export const httpContextMiddleware = httpContext.middleware;
  * @param next The next function to be called (after generating the uuid).
  */
 export const requestIdHandler = (_: Request, __: Response, next: NextFunction) => {
-  httpContext.set('requestId', uuidv1());
+  httpContext.set('requestId', uuidv4());
   next();
 };
 

@@ -1,4 +1,4 @@
-# :sparkler: nest-express-winston
+# nest-express-winston
 
 ## $VERSION Changelog
 
