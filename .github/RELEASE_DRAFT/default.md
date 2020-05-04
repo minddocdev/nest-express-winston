@@ -5,5 +5,3 @@
 $CHANGES
 
 $PULL_REQUESTS
-
-## -- ##
