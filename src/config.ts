@@ -1,6 +1,8 @@
 import { cleanEnv, str } from 'envalid';
 import * as path from 'path';
 
+const environments = ['development', 'concurrent', 'unit', 'integration', 'test', 'qa', 'staging', 'production'];
+
 /**
  * The object that specifies the format of required vars.
  */
@@ -9,7 +11,7 @@ const validators = {
     devDefault: 'development',
     desc: 'The runtime environment',
     example: 'development',
-    choices: ['development', 'test', 'qa', 'staging', 'production'],
+    choices: environments,
   }),
   LOG_LEVEL: str({
     devDefault: 'debug',
@@ -28,6 +30,10 @@ const validators = {
       'input',
       'silly',
     ],
+  }),
+  NODE_ENV: str({
+    choices: environments,
+    default: 'development',
   }),
   VERSION: str({
     devDefault: 'unknown',
