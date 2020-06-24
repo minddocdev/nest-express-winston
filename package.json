@@ -39,7 +39,7 @@
     "express-http-context": "~1.2.3",
     "express-winston": "~4.0.3",
     "uuid": "~8.0.0",
-    "winston": "~3.2.1"
+    "winston": "~3.3.3"
   },
   "devDependencies": {
     "@types/common-tags": "~1.8.0",
