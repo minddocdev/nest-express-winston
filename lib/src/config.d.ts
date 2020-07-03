@@ -1,8 +1,8 @@
 export declare const env: Readonly<{
     ENVIRONMENT: string;
-    LOG_LEVEL: string;
+    LOG_LEVEL: "debug" | "info" | "error" | "warn" | "help" | "data" | "prompt" | "http" | "verbose" | "input" | "silly";
     NODE_ENV: string;
-    VERSION: string;
+    VERSION: "unknown";
 }> & import("envalid").CleanEnv & {
     readonly [varName: string]: string | undefined;
 };

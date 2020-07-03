@@ -1,6 +1,6 @@
 {
   "name": "@minddocdev/nest-express-winston",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Implementation of a nestjs logger using winston and express-winston",
   "author": "MindDoc Health GmbH",
   "license": "MIT",
@@ -34,12 +34,12 @@
     "ncu:u": "ncu -u"
   },
   "dependencies": {
-    "@nestjs/common": "~7.0.13",
-    "envalid": "~6.0.1",
+    "@nestjs/common": "~7.3.1",
+    "envalid": "~6.0.2",
     "express-http-context": "~1.2.3",
     "express-winston": "~4.0.3",
     "uuid": "~8.2.0",
-    "winston": "~3.2.1"
+    "winston": "~3.3.3"
   },
   "devDependencies": {
     "@types/common-tags": "~1.8.0",
