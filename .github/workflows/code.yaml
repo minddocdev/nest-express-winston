@@ -47,7 +47,7 @@ jobs:
       - name: Create release
         uses: minddocdev/mou-release-action@master
         with:
-          draft: false
+          draft: true
           prerelease: false
           templatePath: RELEASE_DRAFT/default.md
           token: ${{ github.token }}
