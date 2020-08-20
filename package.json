@@ -48,7 +48,7 @@
     "@types/uuid": "~8.3.0",
     "common-tags": "~1.8.0",
     "husky": "~4.2.5",
-    "jest": "~26.4.0",
+    "jest": "~26.4.1",
     "npm-check-updates": "~7.1.1",
     "prettier": "~2.0.5",
     "ts-jest": "~26.2.0",
