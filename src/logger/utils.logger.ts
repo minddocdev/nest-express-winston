@@ -123,10 +123,25 @@ export function createNestWinstonLogger(label: string) {
  */
 function sanitizeHeaders(req: Request, propName: string) {
   if (propName === 'headers') {
-    // The 'authorization' header has the plaintext jwt token, we should never log it
-    if ('authorization' in req.headers) req.headers.authorization = 'Bearer [REDACTED]';
     // The 'if-none-match' header can break logstash JSON format
     if ('if-none-match' in req.headers) req.headers['if-none-match'] = 'EXCLUDED';
+    // The 'authorization' header has the plaintext jwt token, we should never log it
+    if (req.headers.authorization) req.headers.authorization = 'Bearer [REDACTED]';
+    // The 'cookie' header could contain jwt tokens
+    if (req.headers.cookie) {
+      const cookies = req.headers.cookie.split('; ');
+      req.headers.cookie = cookies
+        .map((cookie) => {
+          if (cookie.startsWith('AccessToken=')) {
+            return 'AccessToken=REDACTED';
+          }
+          if (cookie.startsWith('RefreshToken=')) {
+            return 'RefreshToken=REDACTED';
+          }
+          return cookie;
+        })
+        .join('; ');
+    }
   }
   return (req as any)[propName];
 }

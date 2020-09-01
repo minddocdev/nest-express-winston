@@ -167,12 +167,14 @@ describe('utils logger', () => {
       headers: {
         authorization: 'Bearer MYSECRETJWTTOKEN',
         'if-none-match': 'W/"2da-0kj/eLumj9c7RIVAqQqLv+KH0h4"',
+        cookie: 'AccessToken=Secret; RefreshToken=Secret; OtherCookie=NoSecret',
       },
       fake: { param: 'isFake' },
     };
     expect(requestFilter(req, 'headers')).toEqual({
       authorization: 'Bearer [REDACTED]',
       'if-none-match': 'EXCLUDED',
+      cookie: 'AccessToken=REDACTED; RefreshToken=REDACTED; OtherCookie=NoSecret',
     });
     expect(requestFilter(req, 'fake')).toEqual(req.fake);
     expect(requestFilter({ headers: { test: '1' } }, 'headers')).toEqual({ test: '1' });
