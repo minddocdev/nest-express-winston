@@ -10,8 +10,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: "13.x"
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@minddocdev"
+          scope: "@minddoc"
       - name: Install yarn dependencies
         run: yarn install --frozen-lockfile
       - name: Lint code

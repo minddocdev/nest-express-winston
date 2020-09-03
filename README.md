@@ -20,13 +20,13 @@ yarn test
 ## Installation
 
 ```bash
-yarn add @minddocdev/nest-express-winston
+yarn add @minddoc/nest-express-winston
 ```
 
 If it does not exist, add a `.yarnrc` file to the root of your project with the following content:
 
 ```text
-"@minddocdev:registry" "https://npm.pkg.github.com"
+"@minddoc:registry" "https://npm.pkg.github.com"
 ```
 
 Ensure you are logged in to github using a personal access token with
@@ -51,7 +51,7 @@ import {
   createNestWinstonLogger,
   httpContextMiddleware,
   requestIdHandler,
-} from '@minddocdev/nest-express-winston';
+} from '@minddoc/nest-express-winston';
 ```
 
 ### Basic Example
@@ -72,7 +72,7 @@ import {
   createNestWinstonLogger,
   httpContextMiddleware,
   requestIdHandler,
-} from '@minddocdev/nest-express-winston';
+} from '@minddoc/nest-express-winston';
 
 import { AppModule } from './app.module';
 import { EnvService } from './env';
