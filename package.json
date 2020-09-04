@@ -1,5 +1,5 @@
 {
-  "name": "@minddocdev/nest-express-winston",
+  "name": "@minddoc/nest-express-winston",
   "version": "0.2.0",
   "description": "Implementation of a nestjs logger using winston and express-winston",
   "author": "MindDoc Health GmbH",
@@ -18,9 +18,6 @@
     "type": "git",
     "url": "https://github.com/minddocdev/nest-express-winston.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
     "nestjs",
     "node",
@@ -31,7 +28,8 @@
     "build": "tsc -b -v",
     "test": "yarn build && jest --coverage --verbose --no-cache",
     "lint": "tslint --project .",
-    "ncu:u": "ncu -u"
+    "ncu:u": "ncu -u",
+    "publish": "npm publish . --access public"
   },
   "dependencies": {
     "@nestjs/common": "~7.4.4",
