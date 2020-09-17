@@ -48,7 +48,7 @@
     "husky": "~4.3.0",
     "jest": "~26.4.2",
     "npm-check-updates": "~9.0.1",
-    "prettier": "~2.1.1",
+    "prettier": "~2.1.2",
     "ts-jest": "~26.3.0",
     "tslint": "~6.1.2",
     "tslint-config-airbnb": "~5.11.2",
