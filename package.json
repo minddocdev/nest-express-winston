@@ -31,7 +31,7 @@
     "publish": "npm publish . --access public"
   },
   "dependencies": {
-    "@nestjs/common": "~7.4.4",
+    "@nestjs/common": "~7.5.3",
     "envalid": "~6.0.2",
     "express-http-context": "~1.2.4",
     "express-winston": "~4.0.5",
