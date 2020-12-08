@@ -35,7 +35,7 @@
     "envalid": "~6.0.2",
     "express-http-context": "~1.2.4",
     "express-winston": "~4.0.5",
-    "uuid": "~8.3.1",
+    "uuid": "~8.3.2",
     "winston": "~3.3.3"
   },
   "devDependencies": {
