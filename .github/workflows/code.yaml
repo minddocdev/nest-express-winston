@@ -33,15 +33,6 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2.3.2
-      - name: Set output
-        id: vars
-        run: echo ::set-output name=tag::${{ github.event.pull_request.number }} | cut -d "v" -f 2
-      - name: Check output
-        env:
-          RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{ steps.vars.outputs.tag }}
       - name: Install yarn dependencies
         run: yarn install --frozen-lockfile
       - name: Lint code
