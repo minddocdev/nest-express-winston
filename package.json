@@ -1,6 +1,6 @@
 {
   "name": "@minddoc/nest-express-winston",
-  "version": "0.2.74",
+  "version": "0.2.75",
   "description": "Implementation of a nestjs logger using winston and express-winston",
   "author": "MindDoc Health GmbH",
   "license": "MIT",
