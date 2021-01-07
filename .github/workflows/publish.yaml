@@ -30,6 +30,9 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
           scope: "@minddocdev"
       - name: Publish the package
-        run: npm publish
+        run: |
+          npm config set registry https://npm.pkg.github.com
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.MINDDOCBOT_TOKEN }}
