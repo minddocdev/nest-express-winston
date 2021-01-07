@@ -34,7 +34,7 @@ jobs:
       - name: Checkout git repository
         uses: actions/checkout@v2.3.2
       - name: Check output
-        run: echo ${${{ github.event.pull_request.number }}:1}
+        run: echo $(${${{ github.event.pull_request.number }}:1})
       - name: Install yarn dependencies
         run: yarn install --frozen-lockfile
       - name: Lint code
