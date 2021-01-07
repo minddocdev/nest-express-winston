@@ -18,7 +18,8 @@ jobs:
           scope: "@minddoc"
       - name: Publish the package
         run: |
-          npm version ${RELEASE_VERSION}
+          echo $RELEASE_VERSION
+          npm --no-git-tag-version version $RELEASE_VERSION
           npm config set registry https://registry.npmjs.org
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           npm publish --access public
@@ -39,7 +40,8 @@ jobs:
           scope: "@minddocdev"
       - name: Publish the package
         run: |
-          npm version ${RELEASE_VERSION}
+          echo $RELEASE_VERSION
+          npm --no-git-tag-version version $RELEASE_VERSION
           npm config set name @minddocdev/nest-express-winston
           npm config set registry https://npm.pkg.github.com
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
