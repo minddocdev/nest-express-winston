@@ -22,4 +22,4 @@ jobs:
       - name: Publish the package
         run: yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{ github.token }}
+          NODE_AUTH_TOKEN: ${{ secrets.MINDDOCBOT_TOKEN }}
