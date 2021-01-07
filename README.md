@@ -3,47 +3,13 @@
 Implementation of a NestJS logger using `winston` and `express-winston`. It replaces the default
 NestJS logger with `winston`, and optionally also adds express logs using `express-winston`.
 
-## Getting Started
-
-```bash
-yarn install
-```
-
-```bash
-yarn build
-```
-
-```bash
-yarn test
-```
-
 ## Installation
 
 ```bash
 yarn add @minddoc/nest-express-winston
 ```
 
-If it does not exist, add a `.yarnrc` file to the root of your project with the following content:
-
-```text
-"@minddoc:registry" "https://npm.pkg.github.com"
-```
-
-Ensure you are logged in to github using a personal access token with
-`delete:packages, read:packages, repo, write:packages` privileges as the password:
-
-```bash
-npm login --registry=https://npm.pkg.github.com
-```
-
-## Publishing
-
-To publish a new version of the package, firstly bump the version in the `package.json` file,
-then cut a new release on [Github](https://github.com/minddocdev/nest-express-winston/releases).
-This will automatically initiate the `publish` Github Action workflow and publish a new version to
-[Github Packages](https://github.com/minddocdev/nest-express-winston/packages)
-
-## Guide
+## Usage
 
 ```typescript
 import {
