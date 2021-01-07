@@ -6,6 +6,7 @@ on:
       - "master"
     paths:
       - ".github/workflows/code.yaml"
+      - ".github/workflows/publish.yaml"
       - "package.json"
       - "lib/**"
       - "src/**"
@@ -15,6 +16,7 @@ on:
   pull_request:
     paths:
       - ".github/workflows/code.yaml"
+      - ".github/workflows/publish.yaml"
       - "package.json"
       - "lib/**"
       - "src/**"
