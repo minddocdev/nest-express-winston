@@ -6,9 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2.3.2
       - uses: actions/setup-node@v1
         with:
+          always-auth: true
           node-version: "13.x"
           scope: "@minddoc"
       - name: Install yarn dependencies
@@ -20,6 +21,9 @@ jobs:
       - name: Build code
         run: yarn build
       - name: Publish the package
-        run: yarn publish
+        run: |
+          yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
+          yarn config set npmAuthToken "$env:NODE_AUTH_TOKEN"
+          yarn publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.MINDDOCBOT_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ github.token }}
