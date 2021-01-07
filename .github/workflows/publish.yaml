@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
+      - name: Set env
+        run: |
+          echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+          echo $RELEASE_VERSION
       - uses: actions/setup-node@v2
         with:
           always-auth: true
@@ -15,6 +19,7 @@ jobs:
           scope: "@minddoc"
       - name: Publish the package
         run: |
+          npm version $RELEASE_VERSION
           npm config set registry https://registry.npmjs.org
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           npm publish --access public
@@ -24,6 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
+      - name: Set env
+        run: |
+          echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+          echo $RELEASE_VERSION
       - uses: actions/setup-node@v2
         with:
           node-version: "13.x"
@@ -31,6 +40,8 @@ jobs:
           scope: "@minddocdev"
       - name: Publish the package
         run: |
+          npm version $RELEASE_VERSION
+          npm config set name @minddocdev/nest-express-winston
           npm config set registry https://npm.pkg.github.com
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           npm publish --access public

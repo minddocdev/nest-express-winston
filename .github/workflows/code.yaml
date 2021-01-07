@@ -33,6 +33,10 @@ jobs:
     steps:
       - name: Checkout git repository
         uses: actions/checkout@v2.3.2
+      - name: Set env
+        run: |
+          echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+          echo $RELEASE_VERSION
       - name: Install yarn dependencies
         run: yarn install --frozen-lockfile
       - name: Lint code
