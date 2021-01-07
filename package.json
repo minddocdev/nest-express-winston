@@ -1,6 +1,6 @@
 {
   "name": "@minddoc/nest-express-winston",
-  "version": "0.2.73",
+  "version": "0.2.74",
   "description": "Implementation of a nestjs logger using winston and express-winston",
   "author": "MindDoc Health GmbH",
   "license": "MIT",
@@ -27,8 +27,7 @@
   "scripts": {
     "build": "tsc -b -v",
     "test": "yarn build && jest --coverage --verbose --no-cache",
-    "lint": "tslint --project .",
-    "publish": "npm publish . --access public"
+    "lint": "tslint --project ."
   },
   "dependencies": {
     "@nestjs/common": "~7.6.5",

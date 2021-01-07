@@ -25,6 +25,6 @@ jobs:
         run: |
           npm config set registry https://registry.npmjs.org
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          yarn publish
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
