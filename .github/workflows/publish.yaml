@@ -3,7 +3,7 @@ on:
   release:
     types: [published]
 jobs:
-  build:
+  publish-npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.2
@@ -11,16 +11,8 @@ jobs:
         with:
           always-auth: true
           node-version: "13.x"
-          scope: "@minddoc"
           registry-url: "https://registry.npmjs.org"
-      - name: Install yarn dependencies
-        run: yarn install --frozen-lockfile
-      - name: Lint code
-        run: yarn lint
-      - name: Test code
-        run: yarn test
-      - name: Build code
-        run: yarn build
+          scope: "@minddoc"
       - name: Publish the package
         run: |
           npm config set registry https://registry.npmjs.org
@@ -28,3 +20,16 @@ jobs:
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+  publish-github:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "13.x"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@minddoc"
+      - name: Publish the package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.MINDDOCBOT_TOKEN }}
