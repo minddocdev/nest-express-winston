@@ -12,6 +12,7 @@ jobs:
           always-auth: true
           node-version: "13.x"
           scope: "@minddoc"
+          registry-url: "https://registry.npmjs.org"
       - name: Install yarn dependencies
         run: yarn install --frozen-lockfile
       - name: Lint code
@@ -22,8 +23,7 @@ jobs:
         run: yarn build
       - name: Publish the package
         run: |
-          yarn config set npmPublishRegistry 'https://npm.pkg.github.com/'
-          yarn config set npmAuthToken "$env:NODE_AUTH_TOKEN"
+          npm config set registry 'https://registry.npmjs.org'
           echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           yarn publish
         env:
