@@ -41,8 +41,6 @@ jobs:
         run: |
           sed -i 's/@minddoc/@minddocdev/g' package.json
           npm --no-git-tag-version version $RELEASE_VERSION
-          npm config set name @minddocdev
-          npm config set name @minddocdev/nest-express-winston
           npm config set registry https://npm.pkg.github.com
           echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
           npm publish --access public
