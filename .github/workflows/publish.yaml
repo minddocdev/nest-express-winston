@@ -39,6 +39,7 @@ jobs:
           scope: "@minddocdev"
       - name: Publish the package
         run: |
+          sed -i 's/@minddoc/@minddocdev/g' package.json
           npm --no-git-tag-version version $RELEASE_VERSION
           npm config set name @minddocdev
           npm config set name @minddocdev/nest-express-winston
