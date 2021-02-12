@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@nestjs/common": "~7.6.12",
-    "envalid": "~6.0.2",
+    "envalid": "~7.0.0",
     "express-http-context": "~1.2.4",
     "express-winston": "~4.0.5",
     "uuid": "~8.3.2",
