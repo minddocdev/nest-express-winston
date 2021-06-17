@@ -30,7 +30,7 @@
     "lint": "tslint --project ."
   },
   "dependencies": {
-    "@nestjs/common": "~7.6.15",
+    "@nestjs/common": "~7.6.18",
     "envalid": "~6.0.2",
     "express-http-context": "~1.2.4",
     "express-winston": "~4.1.0",
